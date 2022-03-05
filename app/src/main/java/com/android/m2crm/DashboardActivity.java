@@ -12,7 +12,12 @@ import android.util.Log;
 
 import com.android.m2crm.databinding.ActivityDashboardBinding;
 
+import java.security.PublicKey;
+
 public class DashboardActivity extends AppCompatActivity {
+
+    public static int incoming_count=0;
+    public static int outgoing_count=0;
 
     ActivityDashboardBinding binding;
     private static DashboardActivity instance;
@@ -38,12 +43,14 @@ public class DashboardActivity extends AppCompatActivity {
         if (!hasPermissions(this, PERMISSIONS)) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
         }
-        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE)!=PackageManager.PERMISSION_GRANTED){
-            Log.i("kat gaya","phirse");
-            Intent intent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS" ) ;
-            startActivity(intent);
-        }
+//        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE)!=PackageManager.PERMISSION_GRANTED){
+//            Log.i("kat gaya","phirse");
+//            Intent intent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS" ) ;
+//            startActivity(intent);
+//        }
 
+        binding.incomingCount.setText(incoming_count+"");
+        binding.outgoingingCount.setText(outgoing_count+"");
     }
 
     public static boolean hasPermissions(Context context, String... permissions) {
