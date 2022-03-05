@@ -28,6 +28,7 @@ public class DashboardActivity extends AppCompatActivity {
     public static String call_name="";
     public static String wa_url="";
     public static String wa_name="";
+    public static boolean permitted=false;
 
     ActivityDashboardBinding binding;
     private static DashboardActivity instance;
@@ -53,8 +54,8 @@ public class DashboardActivity extends AppCompatActivity {
         if (!hasPermissions(this, PERMISSIONS)) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
         }
-        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE)!=PackageManager.PERMISSION_GRANTED){
-            Log.i("kat gaya","phirse");
+        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.BIND_NOTIFICATION_LISTENER_SERVICE)!=PackageManager.PERMISSION_GRANTED && !permitted){
+            permitted=true;
             Intent intent = new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS" ) ;
             startActivity(intent);
         }
