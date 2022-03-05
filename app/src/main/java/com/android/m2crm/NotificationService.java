@@ -53,6 +53,8 @@ public class NotificationService extends NotificationListenerService {
         String name = user;
         if (name.charAt(0) == '+') name = name.substring(1);
 
+        DashboardActivity.queries_count++;
+
         String finalName = name;
         if (message != null) {
 
@@ -74,13 +76,13 @@ public class NotificationService extends NotificationListenerService {
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
                     params.put("action", "addMsg");
-                    params.put("vEmp","animesh");
-                    params.put("vId","2011898902");
+                    params.put("vEmp",DashboardActivity.name);
+                    params.put("vId",DashboardActivity.id);
                     params.put("vMessage", msg);
                     params.put("vDate", date);
                     params.put("vName", finalName);
-                    params.put("sheet", sheet1);
-                    params.put("url", url);
+                    params.put("sheet", DashboardActivity.wa_name);
+                    params.put("url", DashboardActivity.wa_url);
                     Log.i("animesh","called");
                     return params;
 

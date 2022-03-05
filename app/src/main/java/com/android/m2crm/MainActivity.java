@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     public static MainActivity getInstance(){
         return instance;
     }
+
 }

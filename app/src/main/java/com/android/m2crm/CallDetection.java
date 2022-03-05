@@ -3,6 +3,7 @@ package com.android.m2crm;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.CountDownTimer;
 import android.provider.CallLog;
@@ -67,16 +68,24 @@ public class CallDetection extends BroadcastReceiver {
 
                 String type=res[3].equals("1")?"INCOMING":res[3].equals("2")?"OUTGOING":"MISSED";
 
+                if(type.equals("INCOMING")) DashboardActivity.incoming_count++;
+                if(type.equals("OUTGOING")) DashboardActivity.outgoing_count++;
+                if(type.equals("MISSED")) DashboardActivity.missed_count++;
+
+                updateDashboard();
+
+                Log.i("animesh",DashboardActivity.call_url);
+
                 Map<String ,String > params=new HashMap<>();
                 params.put("action","addCaller");
-                params.put("vName","animesh");
-                params.put("vId","20118010");
+                params.put("vName",DashboardActivity.name);
+                params.put("vId",DashboardActivity.id);
                 params.put("vDate",res[1]);
                 params.put("vPhone",res[0]);
                 params.put("vDuration",res[2]);
                 params.put("vType",type);
-                params.put("sheet","Sheet1");
-                params.put("url","https://docs.google.com/spreadsheets/d/1i_oQCVU5xywm6Utf9stoW76qBESfIsY3BIR0QhjVTuU/edit#gid=0");
+                params.put("sheet",DashboardActivity.call_name);
+                params.put("url",DashboardActivity.call_url);
                 return params;
             }
         };
@@ -87,6 +96,10 @@ public class CallDetection extends BroadcastReceiver {
         RequestQueue requestQueue= Volley.newRequestQueue(DashboardActivity.getInstance());
         requestQueue.add(stringRequest);
 
+
+    }
+
+    private void updateDashboard() {
 
     }
 
