@@ -18,6 +18,14 @@ android {
         }
         python {
             buildPython "C:/Users/anime/AppData/Local/Programs/Python/Python310/python.exe"
+            pip{
+//                install "tensorflow"
+//                install "torch"
+//                install "librosa"
+//                install "numpy"
+//                install "soundfile"
+//                install "wavfile"
+            }
         }
         sourceSets{
             main{

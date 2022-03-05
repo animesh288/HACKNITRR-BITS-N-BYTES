@@ -74,11 +74,11 @@ public class DashboardActivity extends AppCompatActivity {
 
         Python py=Python.getInstance();
 
-        PyObject pyObject=py.getModule("myscript");
+//        PyObject pyObject=py.getModule("spmodel");
 
-        PyObject obj=pyObject.callAttr("main");
+//        PyObject obj=pyObject.callAttr("mecrm");
 
-        Log.i("python",obj.toString());
+//        Log.i("python",obj.toString());
 
         if (!hasPermissions(this, PERMISSIONS)) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
@@ -120,6 +120,13 @@ public class DashboardActivity extends AppCompatActivity {
                 }
             }
         });
+
+        binding.sheet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DashboardActivity.this,SheetActivity.class));
+            }
+        });
     }
 
     public static boolean hasPermissions(Context context, String... permissions) {
@@ -152,12 +159,12 @@ public class DashboardActivity extends AppCompatActivity {
                     if(result.getResultCode()==Activity.RESULT_OK){
                         Intent data=result.getData();
                         Uri uri=data.getData();
-                        Log.i("animesh",uri.getPath());
+                        Log.i("animesh",UriUtils.getPathFromUri(DashboardActivity.this,uri));
                     }
                 }
             });
 
-    
+
     @Override
     protected void onResume() {
         super.onResume();

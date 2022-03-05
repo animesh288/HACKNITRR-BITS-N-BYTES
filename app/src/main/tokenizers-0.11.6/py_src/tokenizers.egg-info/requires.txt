@@ -1,0 +1,11 @@
+
+[docs]
+sphinx
+sphinx_rtd_theme
+setuptools_rust
+
+[testing]
+pytest
+requests
+numpy
+datasets
