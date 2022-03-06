@@ -41,8 +41,7 @@ On the basis of the conversation, we automatically place different tags to the c
 
 
 # Tech Stack :
-![Tech Stack-bitsbytes](https://user-images.githubusercontent.com/83586546/156907545-54b50c8b-12fe-4af6-8e7f-a82371188adc.png)
-
+![Tech Stack-bitsbytes](https://user-images.githubusercontent.com/83586546/156912676-ac973d2d-1b02-4308-a7d4-77fa55c005bb.png)
 
 ## CONTRIBUTED BY
 
