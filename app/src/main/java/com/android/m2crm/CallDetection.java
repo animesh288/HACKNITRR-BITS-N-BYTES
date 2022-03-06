@@ -22,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -52,7 +53,7 @@ public class CallDetection extends BroadcastReceiver {
     private void addItemToSheet(String[] res) {
 
 
-        StringRequest stringRequest=new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbwMR7rgljjd9zXe-VukAT1q-P_mTayFFJMhOm7E_WR7vYtDjx1fToHAiZUFlHKmjjNmUA/exec", new Response.Listener<String>() {
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbzAvOy_pmb7tEKHCCFV4fS_OwOvhrCK3kHGya9BgKw2DagyJTnuT32N3lSgJfxa3xiVuA/exec", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.i("animesh", "success");
@@ -76,6 +77,9 @@ public class CallDetection extends BroadcastReceiver {
 
                 Log.i("animesh",DashboardActivity.call_url);
 
+                TagResolver tagResolver=new TagResolver();
+                ArrayList<String > tags=tagResolver.getTags("Hello! I am Rahul, I placed an order on swiggy 20 mins ago and I cannot reach my delivery executive Give me a moment sir, let me just check. Sure! Thank you sir for being on hold, your order will take 15 more minutes to get ready as there is a rush at the restaurant. Your delivery executive is at the restaurant to collect the order as soon as he does it, he will contact you himself.But why can’t I reach my delivery executive? As our delivery man hasnt received your order yet from the restaurant and your delivery code hasnt been generated so that’s why you are are unable to reach the delivery guy.But I wanted to customize my order a little. sir for the same you can contact the restaurant directly. The contact details are provided below your order sure! Thank you for your help Executive: It was my pleasure sir and we apologize for the inconvenience caused. I hope you enjoy your order and have a good day forth");
+
                 Map<String ,String > params=new HashMap<>();
                 params.put("action","addCaller");
                 params.put("vName",DashboardActivity.name);
@@ -86,6 +90,11 @@ public class CallDetection extends BroadcastReceiver {
                 params.put("vType",type);
                 params.put("sheet",DashboardActivity.call_name);
                 params.put("url",DashboardActivity.call_url);
+                params.put("call","Hello! I am Rahul, I placed an order on swiggy 20 mins ago and I cannot reach my delivery executive." +
+                        "Give me a moment sir, let me just check. Sure! Thank you sir for being on hold, your order will take 15 more minutes to get ready as there is a rush at the restaurant. Your delivery executive is at the restaurant to collect the order as soon as he does it, he will contact you himself."+
+                        "But why can’t I reach my delivery executive? As our delivery man hasnt received your order yet from the restaurant and your delivery code hasnt been generated so that’s why you are are unable to reach the delivery guy.But I wanted to customize my order a little. sir for the same you can contact the restaurant directly. The contact details are provided below your order." +
+                        "sure! Thank you for your help Executive: It was my pleasure sir and we apologize for the inconvenience caused. I hope you enjoy your order and have a good day forth");
+                params.put("tags",tags.toString());
                 return params;
             }
         };
