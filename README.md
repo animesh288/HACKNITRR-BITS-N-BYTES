@@ -2,6 +2,11 @@
 
 ## A free and efficient Customer Relationship Management System
 
+## APK LINK : https://drive.google.com/drive/folders/1yUSmFYe1cLNuD9yulnIrc6SmTnq-F9Oo
+
+## Demo Video  Link :  
+https://youtu.be/YblnQ7gEkdA
+
 ### Problem Statement:
 
 An application that Converts a simple smartphone device into a Smart CRM which helps in lead generation from Calls and WhatsApp messages, through storing conversation in textual format, for startups in their initials days when they are financially not very strong to afford heavy subscriptions and compliances based products present out there in the market.
