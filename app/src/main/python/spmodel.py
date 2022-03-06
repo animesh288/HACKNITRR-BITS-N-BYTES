@@ -3,7 +3,7 @@ import librosa
 import numpy as np
 import soundfile as sf
 from scipy.io import wavfile
-from transformers import Wav2Vec2ForCTC, Wav2Vec2Tokenizer
+from transformers import *
 
 
 
@@ -11,7 +11,7 @@ tokenizer = Wav2Vec2Tokenizer.from_pretrained("facebook/wav2vec2-base-960h")
 model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-960h")
 
 def mecrm():
-    file_name="/Internal storage/Android/media/com.whatsapp.w4b/Whatsapp Business/Media/Whatsapp Business Documents/sec1.wav"
+    file_name="/storage/emulated/0/sec1.wav"
     data = wavfile.read(file_name)
     framerate = data[0]
     sounddata = data[1]

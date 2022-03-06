@@ -8,6 +8,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.loader.content.AsyncTaskLoader;
 
 import android.Manifest;
 import android.app.Activity;
@@ -72,13 +73,9 @@ public class DashboardActivity extends AppCompatActivity {
             Python.start(new AndroidPlatform(this));
         }
 
-        Python py=Python.getInstance();
 
-//        PyObject pyObject=py.getModule("spmodel");
-
-//        PyObject obj=pyObject.callAttr("mecrm");
-
-//        Log.i("python",obj.toString());
+//        BgThread thread=new BgThread();
+//        thread.start();
 
         if (!hasPermissions(this, PERMISSIONS)) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
@@ -172,5 +169,18 @@ public class DashboardActivity extends AppCompatActivity {
         binding.outgoingingCount.setText(outgoing_count/2+"");
         binding.missedCount.setText(missed_count/2+"");
         binding.queriesCount.setText(queries_count+"");
+    }
+
+    public class BgThread extends Thread{
+        @Override
+        public void run() {
+            Python py=Python.getInstance();
+
+            PyObject pyObject=py.getModule("spmodel");
+
+            PyObject obj=pyObject.callAttr("mecrm");
+
+            Log.i("python",obj.toString());
+        }
     }
 }

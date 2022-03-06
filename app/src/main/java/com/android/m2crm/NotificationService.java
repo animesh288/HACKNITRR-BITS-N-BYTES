@@ -93,7 +93,7 @@ public class NotificationService extends NotificationListenerService {
             RetryPolicy retryPolicy = new DefaultRetryPolicy(socketTimeOut, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
             stringRequest.setRetryPolicy(retryPolicy);
 
-            RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.getInstance());
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(stringRequest);
         }
     }
