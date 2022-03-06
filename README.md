@@ -29,6 +29,12 @@ Our application takes the name and ID number of the particular employee and as D
 
 On the basis of the conversation, we automatically place different tags to the conversation which helps the Founding team to differentiate between issues and to provide speedy solutions and also analyse their image in the market.Finally it provides daily analytics of the calls and WhatsApp Leads generated.And so, It helps the company by keeping track of their customer’s problems and thereafter satisfaction levels.
 
+
+## Screenshot :
+
+ &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910232-563d24cd-24c3-4015-b2f8-82fb3d91fe08.jpeg" width="280px" height="600px" > &nbsp; &nbsp; &nbsp; &nbsp;        <img src="https://user-images.githubusercontent.com/83586546/156910282-692f5684-fa3a-4a23-b9c9-4d52a092e08c.jpeg" width="280px" height="600px">  &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910331-6dc20af7-37a7-4249-b2e1-e9ae4832c4aa.jpeg" width="280px" height="600px">  
+
+
 # Tech Stack :
 
 ![Tech Stack-bitsbytes](https://user-images.githubusercontent.com/83586546/156907545-54b50c8b-12fe-4af6-8e7f-a82371188adc.png)
