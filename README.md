@@ -32,7 +32,7 @@ On the basis of the conversation, we automatically place different tags to the c
 
 ## Screenshot :
 
- &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910232-563d24cd-24c3-4015-b2f8-82fb3d91fe08.jpeg" width="280px" height="600px" > &nbsp; &nbsp; &nbsp; &nbsp;        <img src="https://user-images.githubusercontent.com/83586546/156910282-692f5684-fa3a-4a23-b9c9-4d52a092e08c.jpeg" width="280px" height="600px">  &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910331-6dc20af7-37a7-4249-b2e1-e9ae4832c4aa.jpeg" width="280px" height="600px">  
+ &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910232-563d24cd-24c3-4015-b2f8-82fb3d91fe08.jpeg" width="250px" height="560px" > &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910282-692f5684-fa3a-4a23-b9c9-4d52a092e08c.jpeg" width="250px" height="560px">  &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910331-6dc20af7-37a7-4249-b2e1-e9ae4832c4aa.jpeg" width="250px" height="560px">  
 
 
 # Tech Stack :
