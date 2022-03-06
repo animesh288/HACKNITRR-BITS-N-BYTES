@@ -32,7 +32,7 @@ On the basis of the conversation, we automatically place different tags to the c
 
 ## Screenshot :
 
- &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156911276-9a4b2469-5049-4327-b50a-10d4403977a4.jpeg" width="250px" height="540px"> &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910232-563d24cd-24c3-4015-b2f8-82fb3d91fe08.jpeg" width="250px" height="540px" > &nbsp; &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910282-692f5684-fa3a-4a23-b9c9-4d52a092e08c.jpeg" width="250px" height="540px">  &nbsp; &nbsp; 
+ &nbsp; &nbsp;  &nbsp;  &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156911276-9a4b2469-5049-4327-b50a-10d4403977a4.jpeg" width="250px" height="540px"> &nbsp; &nbsp;  &nbsp;  &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910232-563d24cd-24c3-4015-b2f8-82fb3d91fe08.jpeg" width="250px" height="540px" > &nbsp; &nbsp;  &nbsp;  &nbsp; <img src="https://user-images.githubusercontent.com/83586546/156910282-692f5684-fa3a-4a23-b9c9-4d52a092e08c.jpeg" width="250px" height="540px"> 
  <img src="https://user-images.githubusercontent.com/83586546/156911445-472796f6-8221-4e11-a735-bb9831f437a5.jpeg" >  
 
 # Tech Stack :
