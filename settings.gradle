@@ -12,6 +12,5 @@ dependencyResolutionManagement {
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
-
 rootProject.name = "M2CRM"
 include ':app'

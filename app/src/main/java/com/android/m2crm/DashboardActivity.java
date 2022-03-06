@@ -5,6 +5,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -18,6 +19,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -27,10 +29,23 @@ import com.android.m2crm.databinding.ActivityDashboardBinding;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+//import com.google.cloud.speech.v1.RecognitionAudio;
+//import com.google.cloud.speech.v1.RecognitionConfig;
+//import com.google.cloud.speech.v1.RecognizeResponse;
+//import com.google.cloud.speech.v1.SpeechClient;
+//import com.google.cloud.speech.v1.SpeechRecognitionAlternative;
+//import com.google.cloud.speech.v1.SpeechRecognitionResult;
+//import com.google.common.io.ByteStreams;
+//import com.google.protobuf.ByteString;
 //import com.jaiselrahman.filepicker.activity.FilePickerActivity;
 //import com.jaiselrahman.filepicker.config.Configurations;
 
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.PublicKey;
+import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -59,6 +74,7 @@ public class DashboardActivity extends AppCompatActivity {
             Manifest.permission.READ_EXTERNAL_STORAGE
     };
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +89,7 @@ public class DashboardActivity extends AppCompatActivity {
             Python.start(new AndroidPlatform(this));
         }
 
+        test();
 
 //        BgThread thread=new BgThread();
 //        thread.start();
@@ -126,6 +143,8 @@ public class DashboardActivity extends AppCompatActivity {
         });
     }
 
+
+
     public static boolean hasPermissions(Context context, String... permissions) {
         if (context != null && permissions != null) {
             for (String permission : permissions) {
@@ -157,6 +176,7 @@ public class DashboardActivity extends AppCompatActivity {
                         Intent data=result.getData();
                         Uri uri=data.getData();
                         Log.i("animesh",UriUtils.getPathFromUri(DashboardActivity.this,uri));
+
                     }
                 }
             });
@@ -171,16 +191,49 @@ public class DashboardActivity extends AppCompatActivity {
         binding.queriesCount.setText(queries_count+"");
     }
 
-    public class BgThread extends Thread{
-        @Override
-        public void run() {
-            Python py=Python.getInstance();
+//    public class BgThread extends Thread{
+//        @Override
+//        public void run() {
+//            Python py=Python.getInstance();
+//
+//            PyObject pyObject=py.getModule("spmodel");
+//
+//            PyObject obj=pyObject.callAttr("mecrm");
+//
+//            Log.i("python",obj.toString());
+//        }
+//    }
 
-            PyObject pyObject=py.getModule("spmodel");
-
-            PyObject obj=pyObject.callAttr("mecrm");
-
-            Log.i("python",obj.toString());
-        }
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void test() {
+//        try (SpeechClient speech = SpeechClient.create()) {
+//            String fileName="";
+//            Path path= Paths.get(fileName);
+//            byte[] data= Files.readAllBytes(path);
+//            ByteString audioBytes=ByteString.copyFrom(data);
+//
+//            RecognitionConfig config=RecognitionConfig.newBuilder()
+//                    .setEncoding(RecognitionConfig.AudioEncoding.LINEAR16)
+//                    .setSampleRateHertz(16000)
+//                    .setLanguageCode("en-US")
+//                    .build();
+//
+//            RecognitionAudio audio = RecognitionAudio.newBuilder()
+//                    .setContent(audioBytes)
+//                    .build();
+//            RecognizeResponse response = speech.recognize(config, audio);
+//            List<SpeechRecognitionResult> results = response.getResultsList();
+//            for (SpeechRecognitionResult result: results) {
+//                // There can be several alternative transcripts for a given chunk of speech. Just use the
+//                // first (most likely) one here.
+//                SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+//                System.out.printf("Transcription: %s%n", alternative.getTranscript());
+//            }
+//            speech.close();
+//
+//        }catch (Exception e){
+//
+//        }
     }
+
 }
