@@ -21,12 +21,12 @@ def index():
 def predict():
     msg = request.form.get('msg')
 
-    #features = create_feature(msg, nrange=(1, 4))
+    features = create_feature(msg, nrange=(1, 4))
     pred = msg
-    #features = vectorizer.transform(features)
-    #pred = features.sum()
+    features = vectorizer.transform(features)
+    pred = features.sum()
 
-    # pred = model.predict(features)[0]
+    pred = model.predict(features)[0]
 
     return jsonify({'msg': str(pred)})
 
